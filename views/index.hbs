@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login Panel</title>
+    <link rel="stylesheet" href="style.css">
+
+
+{{!-- this is server code dont edit this --}}
+      {{#if error}}
+    <script>alert("{{message}}")</script>
+  {{/if}}
+  {{!-- end server code --}}
+</head>
+<body>
+  <h2><center>Pune Business Education Training Board</center></h2>
+  <h2><center>Welcome to Admin Panel</center></h2>
+  <div class="container">
+    <div class="myform">
+      <form method="post">
+        <h2>ADMIN LOGIN</h2>
+        <input type="text" placeholder="Admin Name" name="user">
+        <input type="password" placeholder="Password" name="password">
+          <input type="submit" value=" LOGIN ">    
+    </div>
+    <div class="image">
+      <img src="image.jpg">
+    </div>
+  </div>
+
+</body>
+</html>
