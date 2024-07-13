@@ -17,4 +17,4 @@ app.post("/",(req,res)=>{
 })
 
 
-app.listen(3000||process.env.PORT)
+app.listen(process.env.PORT)
