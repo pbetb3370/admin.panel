@@ -11,8 +11,12 @@ app.use(cookieParser())
 async function protected(req,res,next){
     try{
         let cki = req.cookies.jwt;
-        await jwt.verify(cki,SECRET);
-        next();
+        let vfy = await jwt.verify(cki,SECRET);
+        if(vfy){
+            next()
+        }else{
+            res.redirect("/")
+        }
     }catch(err){
         res.render("index",{error:true,message:"Login to continue"})
     }
@@ -22,7 +26,7 @@ app.get("/",protected,(req,res)=>{
  })
 app.get("/logout",(req,res)=>{
     res.clearCookie("jwt",{path:"/"});
-    res.redirect("/")    
+    res.render("index")    
 })
 app.post("/",async(req,res)=>{
     if(req.body.user==process.env.USER&&req.body.password==process.env.PASSWORD){
