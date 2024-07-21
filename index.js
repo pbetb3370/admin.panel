@@ -26,7 +26,7 @@ app.get("/",protected,(req,res)=>{
  })
 app.get("/logout",(req,res)=>{
     res.clearCookie("jwt",{path:"/"});
-    res.render("index")    
+    res.redirect("/")  
 })
 app.post("/",async(req,res)=>{
     if(req.body.user==process.env.USER&&req.body.password==process.env.PASSWORD){
