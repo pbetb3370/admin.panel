@@ -22,7 +22,7 @@ app.get("/",protected,(req,res)=>{
  })
 app.get("/logout",(req,res)=>{
     res.clearCookie("jwt");
-    res.redirect("/https://admin-panel-tpk5.onrender.com/")    
+    res.redirect("/")    
 })
 app.post("/",async(req,res)=>{
     if(req.body.user==process.env.USER&&req.body.password==process.env.PASSWORD){
