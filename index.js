@@ -22,7 +22,7 @@ app.get("/",protected,(req,res)=>{
  })
 app.get("/logout",(req,res)=>{
     res.clearCookie("jwt");
-    res.redirect("/https://admin-panel-5rfh.onrender.com")    
+    res.redirect("/")    
 })
 app.post("/",async(req,res)=>{
     if(req.body.user==process.env.USER&&req.body.password==process.env.PASSWORD){
@@ -58,5 +58,8 @@ app.get("/tssc",protected,(req,res)=>{
 })
 app.get("/admin",protected,(req,res)=>{
     res.render("admin")
+})
+app.get("/main_dashboard",protected,(req,res)=>{
+    res.render("main_dashboard")
 })
 app.listen(3000||process.env.PORT)
