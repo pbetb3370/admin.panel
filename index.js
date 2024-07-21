@@ -21,7 +21,7 @@ app.get("/",protected,(req,res)=>{
     res.render("main_dashboard")
  })
 app.get("/logout",(req,res)=>{
-    res.clearCookie("jwt");
+    res.clearCookie("jwt",{path:"/"});
     res.redirect("/")    
 })
 app.post("/",async(req,res)=>{
