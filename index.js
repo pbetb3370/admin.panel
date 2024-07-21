@@ -19,6 +19,10 @@ async function protected(req,res,next){
 }
 app.get("/",protected,(req,res)=>{
     res.render("main_dashboard")
+ })
+app.get("/logout",(req,res)=>{
+    res.clearCookie("jwt");
+    res.redirect("/")    
 })
 app.post("/",async(req,res)=>{
     if(req.body.user==process.env.USER&&req.body.password==process.env.PASSWORD){
